@@ -3,4 +3,8 @@ class ArticlesController < ApplicationController
     @id = params[:id]
     @article = Article.find(@id)
   end
+
+  def index
+    @articles = Article.all
+  end
 end
