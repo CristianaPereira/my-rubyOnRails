@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # root 'pages_controller#home_action'
-  root "pages#home"
+  root "pages#home", as: "home" # root_path > home_path
 
   # /about
   get "about", to: "pages#about"
