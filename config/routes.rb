@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :authors
+  resources :articles, only: [ :show ]
   # When you use resources, Rails automatically generates routes for the seven default actions that are commonly used in CRUD
   # index => list all
   # show => displays one specfic doc
