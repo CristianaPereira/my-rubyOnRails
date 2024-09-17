@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # lowercase email before save to database
+  before_save { self.email = email.downcase }
+
   # The dependent: :destroy option specifies that when a user is deleted, all associated articles should also be deleted
   has_many :articles, dependent: :destroy
 
