@@ -19,5 +19,8 @@
     <%= f.label :description%>
   </p>
   <%= f.text_area :description%>
+  <br/>
+  <%= f.select :user_id, User.all.map{|c| [c.username, c.id]}, :prompt => "Select One" %>
+  <br/>
   <%= f.submit %>
 <% end%>

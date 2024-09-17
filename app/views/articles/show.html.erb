@@ -1,6 +1,7 @@
 show
-<p>Id: <%= @id%></p>
+<p>Id: <%=@article.id%></p>
 <p>Title: <%= @article.title%></p>
+<p>Criado por: <%= @article.user.username%></p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> | 
 <%= button_to 'Delete', article_path(@article), method: :delete, form: { data: { turbo_confirm: 'Are you sure?',  } } %>

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # The dependent: :destroy option specifies that when a user is deleted, all associated articles should also be deleted
+  has_many :articles, dependent: :destroy
+
   validates :username,
             presence: true,
             uniqueness: { case_sensitive: false },
