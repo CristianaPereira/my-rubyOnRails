@@ -1,5 +1,5 @@
 <p>Id: <%=article.id%></p>
 <p>Title: <%= article.title%></p>
 <p>Description: <%= article.description%></p>
-<p>Created by: <%= article.user.username%></p>
+<p>Created by: <%=link_to article.user.username, article.user%></p>
 <p>Created at: <%= article.created_at %></p>

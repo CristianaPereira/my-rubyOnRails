@@ -2,14 +2,19 @@
 <table>
   <tr>
     <th>Id</th>
-    <th>Username</th>
+    <th colspan="2">Username</th>
     <th>Email</th>
+    <th>Articles</th>
+    <th>Joined</th>
     <th colspan="3">Actions</th>
   </tr>
   <% @users.each do |user| %>
   <tr>
     <td>
       <span><%= user.id %></span>
+    </td>
+      <td>
+      <span><%=gravatar_for(user, size: 20)%></span>
     </td>
     <td>
       <span><%= user.username %></span>
@@ -18,7 +23,13 @@
       <span><%= user.email %></span>
     </td>
     <td>
-      <%= link_to 'show', user_path(user) %>
+      <span><%= pluralize(user.articles.count, 'article') %></span>
+    </td>
+    <td>
+      <span><%= time_ago_in_words(user.created_at) %> ago</span>
+    </td>
+    <td>
+      <%= link_to 'View profile', user %>
     </td>
     <td>
       <%= link_to 'edit', edit_user_path(user) %>
