@@ -1,0 +1,20 @@
+<%# Title %>
+<% if local_assigns.has_key?(:title)%>
+  <h1><%= title %></h1>
+<% end %>
+ 
+ <%# Errors %>
+<%= render '/shared/errors', { obj:  @user } %>
+<%# Form content %>
+<%= form_with(model: @user, local:true) do |f| %>
+  <p> <%= f.label :username, palceholder:'username'  %> </p>
+  <%= f.text_field :username %>
+  <p> <%= f.label :email, palceholder:'email'  %> </p>
+  <%= f.text_field :email %>
+  <p>
+    <%= f.label :password%>
+  </p>
+   <%= f.text_field :password %>
+
+  <%= f.submit "Sign Up" %>
+<% end%>
