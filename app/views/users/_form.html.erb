@@ -14,7 +14,8 @@
   <p>
     <%= f.label :password%>
   </p>
-   <%= f.text_field :password %>
-
-  <%= f.submit "Sign Up" %>
+  <%= f.text_field :password %>
+  <br>
+  <br>
+  <%= f.submit(@user.new_record? ? "Sign Up"  : "Update account") %>
 <% end%>
