@@ -1,8 +1,5 @@
-show
-<p>Id: <%=@article.id%></p>
-<p>Title: <%= @article.title%></p>
-<p>Criado por: <%= @article.user.username%></p>
-
+<h1>Article details</h1>
+<%= render 'article', {article: @article} %>
 <%= link_to 'Edit', edit_article_path(@article) %> | 
 <%= button_to 'Delete', article_path(@article), method: :delete, form: { data: { turbo_confirm: 'Are you sure?',  } } %>
 <%= link_to 'Return to articles ', articles_path %>
