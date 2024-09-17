@@ -1,3 +1,8 @@
+<%# Title %>
+<% if local_assigns.has_key?(:title)%>
+  <h1><%= title %></h1>
+<% end %>
+ <%# Errors %>
 <% if @article.errors.any? %>
   <h2>The following errors prevented the article from being saved</h2>
   <ul>
@@ -6,6 +11,7 @@
     <% end %>
   </ul>
 <% end %>
+<%# Form content %>
 <%= form_with(model: @article, local:true) do |f| %>
   <p> <%= f.label :title %> </p>
   <%= f.text_field :title %>
