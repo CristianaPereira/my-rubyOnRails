@@ -26,14 +26,13 @@
         </p>
       </span>
     </td>
-    <td>
+    
+    <td class="btn-group" role="group" aria-label="Basic example">
       <%= link_to 'show', article_path(article), class: "btn btn-primary btn-sm" %>
-    </td>
-    <td>
-      <%= link_to 'edit', edit_article_path(article), class: "btn btn-sm btn-success" %>
-    </td>
-    <td>
-      <%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-sm btn-danger" %>
+      <% if logged_in? && article.user == current_user %>
+        <%= link_to 'edit', edit_article_path(article), class: "btn btn-sm btn-success" %>
+        <%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-sm btn-danger" %>
+      <% end %>
     </td>
   </tr>
 <% end %>
