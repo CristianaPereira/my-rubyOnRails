@@ -1,6 +1,9 @@
 <h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
 
 <%= gravatar_for @user, size: 40%>
+<% if logged_in? && @user == current_user %>
+  <%= button_to "Delete My account", user_path(current_user), class: "btn btn-danger", method: :delete, form: { data: { turbo_confirm: 'Are you sure?',  } }%> 
+<% end %>
 <h3>Articles</h3>
 <div class="flickr_pagination">
   <%= will_paginate @articles, :container => false %>
