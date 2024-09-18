@@ -35,7 +35,7 @@ gem "will_paginate", "~> 4.0"
 
 gem "sassc-rails"
 
-gem "bootstrap", "~> 4.4.1"
+gem "bootstrap", "~> 5.3.3"
 gem "jquery-rails"
 
 
