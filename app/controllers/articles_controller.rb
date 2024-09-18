@@ -10,10 +10,12 @@ class ArticlesController < ApplicationController
   def new
     # initializes @article when entering form page
     @article = Article.new
+    @article.user = current_user # sets current user as author
   end
 
   def create
     @article = Article.new(article_params)
+  
     if @article.save
       flash[:notice] = "Article was created successfully."
 
